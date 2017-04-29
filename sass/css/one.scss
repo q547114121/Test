@@ -1,0 +1,12 @@
+@function px2rem($px){
+
+  @return $px/75 * 1rem;
+}
+div{
+  width: px2rem(750px);
+
+  color: #000;
+}
+p{
+
+}
