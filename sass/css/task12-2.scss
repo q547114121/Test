@@ -1,0 +1,207 @@
+@import "two.scss";
+*{
+  margin:0;
+  padding: 0;
+}
+$bg-color:(
+        header: #5fc0cd,
+        left-header:#55a8b3,
+        body:#fff,
+        list:#b3b3b3,
+        footer:#f8fafb
+);
+.header{
+  width: 100%;
+  background-color: map_get($bg-color,header);
+  height:pxtorem(90px);
+  position: fixed;
+  top:0;
+  .button{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    line-height: pxtorem(90px);
+    .first-button{
+      vertical-align: middle;
+      margin-right: -0.3rem;
+      padding: 0;
+      border: 0;
+      height: pxtorem(70px);
+      width: pxtorem(144px);
+      @include text(34px,#fff);
+      border-radius: 0.4rem;
+      background-color: map_get($bg-color,left-header);
+    }
+    .second-button{
+      @extend .first-button;
+      @include text(34px,#5fc0cd);
+      background-color: map_get($bg-color,body);
+      position: relative;
+      right: 5px;
+    }
+    a{
+      display: inline-block;
+      position: absolute;
+      right: pxtorem(20px);
+      top:pxtorem(16px);
+      img{
+        @include img-size(44px,44px);
+      }
+    }
+  }
+}
+.main{
+  padding-top: pxtorem(90px);
+  padding-bottom: pxtorem(100px);
+  .top-nav {
+    width: 100%;
+    height: pxtorem(80px);
+    border: 1px solid #d8d8d8;
+    vertical-align: middle;
+    ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      height: pxtorem(80px);
+    }
+    .ul-first-nav {
+      .li-first-nav{
+        float: left;
+        height: pxtorem(80px);
+        width: 32.9%;
+        text-align: center;
+        @include text(28px,#d8d8d8);
+        border:0;
+        line-height: pxtorem(80px);
+        i{
+            font-size: 16px;
+            margin-top: 2px;
+            float: right;
+            &:after{
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: pxtorem(50px);
+            background-color: #e2e6e7;
+            position: relative;
+            top:8px;
+            left: 10px;
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+  .list ul{
+    list-style: none;
+    @extend %margin-padding;
+    border:0;
+    border-bottom: 1px solid #d8d8d8;
+    height: pxtorem(150px);
+    li{
+      height: pxtorem(50px);
+      line-height:pxtorem(50px);
+    }
+    .one-list,.four-list{
+      @include text(28px,#d8d8d8);
+      vertical-align: middle;
+    }
+    .one-list-sever{
+      display: inline-block;
+      margin-left:pxtorem(30px);
+      background-image: url(photo/task6-0.png);
+      @include spirt(18px,14px,0);
+      vertical-align: middle;
+      line-height: pxtorem(50px);
+      background-size: 70%;
+    }
+    .two-list{
+      float: left;
+      @include text(28px,#333333);
+      vertical-align: middle;
+      line-height:pxtorem(50px);
+      margin-left: pxtorem(66px);
+    }
+    .three-list{
+      text-align: right;
+      @include text(30px,red);
+      padding-right: pxtorem(30px);
+      a{
+        text-decoration: none;
+        @include text(50px,#5fc0cd);
+        padding-left: 15px;
+        .icon-arrow-right{
+          vertical-align: top;
+        }
+      }
+    }
+    .four-list-address{
+      display: inline-block;
+      vertical-align: middle;
+      background-size: 70%;
+      background-repeat: no-repeat;
+      width: 20px;
+      height:20px;
+      background-position: 6px -14px;
+      margin-left: pxtorem(20px);
+    }
+  }
+}
+.footer{
+  width: 100%;
+  height:pxtorem(100px);
+  position: fixed;
+  bottom: 0;
+  background-color: map_get($bg-color,footer);
+  text-align: center;
+  .left-footer{
+    float: left;
+    height: pxtorem(100px);
+    width: 40%;
+    line-height:pxtorem(100px);
+    .left-button{
+      img{
+        @include img-size(60px,46px);
+      }
+      span{
+        @include text(24px,#5fc0cd);
+      }
+    }
+  }
+  .mid-footer{
+    display: inline-block;
+    width: 20%;
+    height: pxtorem(100px);
+    float: left;
+    line-height:pxtorem(100px);
+    margin-left: -0.6rem;
+    .write{
+      vertical-align: middle;
+    }
+    img{
+      @include img-size(94px,94px);
+    }
+  }
+  .right-footer{
+
+    height: pxtorem(100px);
+    width: 40%;
+    line-height:pxtorem(100px);
+    float: left;
+    .right-button{
+      img{
+        @include img-size(44px,44px);
+      }
+      span{
+        @include text(24px,#d8d8d8);
+      }
+    }
+  }
+ button {
+    padding: 0;
+    background-color: map_get($bg-color,footer);
+    border:0;
+    outline: none;
+  }
+
+}

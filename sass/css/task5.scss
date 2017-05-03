@@ -1,0 +1,186 @@
+@import "two.scss";
+*{
+  margin:0;
+  padding: 0;
+}
+$bg-color:(
+  header: #5fc0cd,
+  body:#fff,
+  list:#b3b3b3
+);
+
+
+.header{
+  height:pxtorem(80px);
+  position: relative;
+  line-height: pxtorem(80px);
+  .top-logo-header{
+    position: fixed;
+    z-index: 2;
+    margin:0 0 0 2%;
+    img{
+      @include img-size(24px,36px);
+      vertical-align: middle;
+    }
+  }
+  .top-text-header{
+    @include text(36px,#fff);
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    text-align: center;
+    background-color: map_get($bg-color,header);
+  }
+}
+.content {
+  padding-bottom: pxtorem(180px);
+  .top-content {
+    width: 100%;
+    height: pxtorem(320px);
+    background-image: url(/photo/task5-2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .photo {
+      display: inline-block;
+      line-height: pxtorem(320px);
+      img {
+        @include img-size(170px, 176px);
+        margin: 0 2rem;
+        vertical-align: middle;
+      }
+    }
+    .name-adress {
+      display: inline-block;
+      vertical-align: middle;
+      .name {
+        @include text(36px, #fff);
+      }
+      .adress {
+        @include text(24px, #fff);
+        margin-top: 15px;
+        line-height: pxtorem(20px);
+        img {
+          @include img-size(22px, 28px);
+        }
+        span {
+          display: inline-block;
+          padding-left: 10px;
+          vertical-align: top;
+          line-height: pxtorem(20px);
+        }
+      }
+    }
+  }
+  .introduce-list {
+    list-style: none;
+    width: 100%;
+    margin-left: 2rem;
+    li {
+      border-bottom: 1px solid #d8d8d8;
+      line-height: pxtorem(100px);
+    }
+    .person-skill {
+      .blue {
+        vertical-align: middle;
+        padding: 0 2px;
+        height: 16px;
+        background-color: map_get($bg-color, header);
+        display: inline-block;
+        margin-top: -2px;
+      }
+      .skill {
+        @include text(32px, #333333);
+        margin-left: 1rem;
+      }
+    }
+    .person-condition {
+      padding-left: 1.5rem;
+      img {
+        vertical-align: middle;
+        @include img-size(26px, 26px);
+        padding-bottom: 8px;
+        padding-right: 5px;
+      }
+
+      span {
+        @include text(32px, #333333);
+      }
+    }
+    .icon {
+      display: inline-block;
+      padding: 7px 1px 7px 0;
+      background: map_get($bg-color, list);
+      margin: 0 8px;
+      position: relative;
+      top: 2px;
+    }
+    .person-work-length, .person-work-time, .person-work-price, .person-work-serve {
+      padding-left: 1.5rem;
+      @include text(32px, #b3b3b3);
+    }
+    .person-work-length .work-length {
+      @include text(32px, #333333);
+    }
+    .person-work-time .work-length {
+      @include text(32px, #333333);
+    }
+    .person-work-price .work-price {
+      @include text(32px, red);
+    }
+    .person-work-serve {
+      position: relative;
+      .work-serve {
+        position: absolute;
+        line-height: 16px;
+        top: 15px;
+        @include text(28px, #333333);
+        padding-right: 25px;
+      }
+    }
+
+  }
+}
+.footer{
+  width: 100%;
+  height:pxtorem(110px);
+  position: fixed;
+  bottom: 0;
+  background-color: map_get($bg-color,body);
+  .left-footer{
+    border: 1px solid #5fc0cd;
+    border-radius: 0.4rem;
+    width: 40%;
+    height: 4rem;
+    position:absolute;
+    bottom: 0;
+    margin: 0 0 3% 5%;
+    text-align: center;
+    a{
+      display: block;
+      width: 100%;
+      text-decoration: none;
+      @include text(34px,#5fc0cd);
+      line-height: 4rem;
+    }
+  }
+  .right-footer{
+    border: 1px solid #5fc0cd;
+    border-radius: 0.4rem;
+    background-color: #5fc0cd;
+    width: 40%;
+    height: 4rem;
+    position: absolute;
+    bottom: 0;
+    margin: 0 0 3% 55%;
+    text-align: center;
+    a{
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    @include text(34px,#fff);
+    line-height: 4rem;
+  }
+  }
+}
+
+
