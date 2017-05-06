@@ -1,0 +1,122 @@
+@import "task13-0.scss";
+@import "task13.scss";
+$bg-color:(
+        header:#29bde0,
+        content:#fff,
+        footer-1:#f66f6f,
+        footer-2:#fbb435
+);
+body{
+ @extend %margin-padding;
+}
+.header{
+  @extend %header;
+  background-color: map_get($bg-color,header);
+  line-height: pxtorem(80px);
+  vertical-align: middle;
+  @include text(pxtorem(68px),#fff);
+  .btn-1{
+    @extend %left-header;
+    @extend %btn;
+    margin-left: pxtorem(20px)!important;
+    line-height: pxtorem(80px);
+    img{
+      @include img-size(46px,40px);
+      vertical-align: middle;
+    }
+  }
+  .btn-2{
+    @extend %right-header;
+    @extend %btn;
+    margin-right: pxtorem(20px)!important;
+    line-height: pxtorem(80px);
+    img{
+      @include img-size(42px,44px);
+      vertical-align: middle;
+    }
+  }
+}
+.main{
+  border-top: 1px solid #74d4eb;
+  margin-top: pxtorem(80px);
+  margin-bottom: pxtorem(128px);
+  background-color: map_get($bg-color,header);
+  .main-header{
+    height: pxtorem(246px);
+    text-align: center;
+    img{
+      margin-top: pxtorem(20px);
+      @include img-size(352px,206px);
+    }
+  }
+  .main-text-1{
+    height: pxtorem(172px);
+    padding: 0 12%;
+    @include text(pxtorem(68px),#ffc865);
+  }
+  .main-text-2{
+    height: pxtorem(198px);
+    padding-left: 12%;
+    @include text(pxtorem(52px),#fff);
+    p{
+      margin: 0;
+    }
+  }
+   .main-text-3 {
+    height: pxtorem(190px) ;
+    padding-left: 12%;
+    background-color: map_get($bg-color,content);
+     .text-container{
+       height: pxtorem(68px);
+       line-height: pxtorem(68px);
+     }
+    .main-text-first-header{
+      float: left;
+      @include text(pxtorem(60px),#515151);
+    }
+     .main-text-second-header{
+       float: right;
+       margin-right: 18%;
+       @include text(pxtorem(40px),#d5d5d5);
+       -webkit-text-size-adjust: none;
+     }
+     p{
+       margin-top: pxtorem(8px);
+       margin-bottom: 0;
+       @include text(pxtorem(52px),#d5d5d5)
+     }
+  }
+  .main-text-4{
+    @extend .main-text-3;
+    border-top: 1px solid #dddddd;
+  }
+}
+.footer{
+  height: pxtorem(128px);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(map_get($bg-color,header),0.5);
+  .footer-btn-1{
+    position: absolute;
+    top:pxtorem(24px);
+    left: pxtorem(24px);
+    @extend %btn;
+    height: pxtorem(86px);
+    width: pxtorem(270px);
+    background-color:map_get($bg-color,footer-1);
+    @include text(pxtorem(80px),#fff);
+    border-radius: pxtorem(16px) ;
+  }
+  .footer-btn-2{
+    position: absolute;
+    top:pxtorem(24px);
+    right: pxtorem(24px);
+    @extend %btn;
+    height: pxtorem(86px);
+    width: pxtorem(270px);
+    background-color:map_get($bg-color,footer-2);
+    @include text(pxtorem(80px),#fff);
+    border-radius: pxtorem(16px) ;
+  }
+}

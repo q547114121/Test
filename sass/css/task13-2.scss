@@ -1,0 +1,120 @@
+@import "task13-0.scss";
+@import "task13.scss";
+$bg-color:(
+        header:#69d1e9,
+        body:#f0f0f0,
+        main:#fff,
+        mian-list:#69d1e9
+
+);
+body{
+  @extend %margin-padding;
+  background-color: map_get($bg-color,body);
+}
+.header{
+ @extend %header;
+  z-index: 1;
+  .btn{
+    @extend %btn;
+    @extend %left-header;
+    line-height:pxtorem(80px);
+    margin-left: pxtorem(22px)!important;
+    img{
+      @include img-size(34px,28px);
+
+      vertical-align: middle;
+    }
+  }
+}
+.main{
+  padding-top: pxtorem(80px);
+  .top-content{
+    position: relative;
+    height: pxtorem(116px);
+    margin: pxtorem(26px) pxtorem(35px) 0;
+    border: 1px solid #c9c9c9;
+    background-color: map_get($bg-color,main);
+    @include text(35px,#9a9a9a);
+    line-height: pxtorem(116px);
+    vertical-align: middle;
+    text-align: center;
+    .button{
+      @extend %btn;
+      background-color: map_get($bg-color,main);
+      position: absolute;
+      right:pxtorem(14px);
+      top: 50%;
+      transform: translateY(-50%);
+      img{
+        @include img-size(24px,40px);
+      }
+    }
+  }
+  .list-group{
+    position: relative;
+    margin: pxtorem(26px) pxtorem(35px) 0;
+    border: 1px solid #d0d0d0;
+    background-color: map_get($bg-color,main);
+    .first-list{
+      height: pxtorem(90px);
+      width: 100%;
+      border-bottom: 1px solid #fdd793;
+      text-align: center;
+      line-height:0.45rem;
+      @include text(38px,#fbb435);
+    }
+    .second-list{
+      display: block;
+      height: pxtorem(136px);
+      margin: pxtorem(30px) pxtorem(50px) 0;
+      background-color: #69d1e9;
+      @include text(32px,#fff);
+      text-align: center;
+      text-decoration: none;
+      line-height: pxtorem(136px);
+      border: 1px solid #69d1e9;
+    }
+    .third-list{
+      height:pxtorem(76px);
+      width:100%;
+      background-color: #ffffff;
+      text-align: center;
+      vertical-align: middle;
+      line-height: 0.38rem;
+      @include text(25px,#787878);
+    }
+    .button-3{
+      @extend %btn;
+      float: right;
+      .glyphicon{
+        @include triangle(right,pxtorem(28px),#fbb435);
+        position: fixed;
+        right: pxtorem(44px);
+        top: pxtorem(640px);
+      }
+    }
+    .second-list-1{
+      @extend .second-list;
+      margin-top:0;
+    }
+    .footer{
+      width: pxtorem(128px);
+      height: pxtorem(38px);
+      margin: 0 auto;
+    }
+      .round-footer-1{
+        float: left;
+        height: pxtorem(16px);
+        width: pxtorem(16px);
+        margin: pxtorem(8px) pxtorem(8px) 0;
+        background-color: map_get($bg-color,header);
+       border-radius: 50%;
+
+      }
+    .round-footer-2,.round-footer-3,.round-footer-4{
+      @extend .round-footer-1;
+      background-color: map_get($bg-color,body);
+    }
+
+  }
+}
