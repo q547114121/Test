@@ -1,0 +1,166 @@
+@import "column.scss";
+@import "base.scss";
+@import "component.scss";
+@import "common.scss";
+$bg-color:(
+        body:#fafafa,
+        header:#29b078,
+        bottom-footer:#26a26f
+);
+$font-color:(
+        header:#fff,
+        intrduce-list:#999999,
+        top-footer:#999999,
+        footer:#ffffff
+);
+$header-size:14px!default;
+$header-color:#29b078!default;
+$icon-size:18px;
+$i-1-size:20px;
+body{
+  background-color: map_get($bg-color,body);
+}
+.header .row .col-sm-12 {
+  span{
+    @include font($header-size,$header-color);
+  }
+  i{
+    @include font($icon-size,$header-color);
+  }
+  .i-1{
+    font-size: $i-1-size;
+    vertical-align: top;
+  }
+}
+//navbar height
+$navbar-height:70px!default;
+.bottom-header{
+  background-color: map_get($bg-color,header);
+}
+.navbar{
+  @extend %clearfix-1;
+  height: $navbar-height;
+  .navbar-brand{
+    color:map_get($font-color,header);
+    margin-top: $navbar-height/6;
+    h2{
+      font-size: 30px;
+    }
+    p{
+      -webkit-text-size-adjust: none;
+      font-size: 10px;
+    }
+  }
+  .nav li a{
+    padding-top:0;
+    padding-bottom: 0;
+    line-height: $navbar-height;
+    vertical-align: middle;
+    color:map_get($font-color,header);
+    background-color: map_get($bg-color,header);
+  }
+}
+//main scss
+$first-line-hegiht:80px!default;
+$main-shadow-color:#999999!default;
+$main-padding-bottom:100px!default;
+$first-size:16px!default;
+$first-page-color:#000000!default;
+$main-job-color: #29b078!default;
+$second-line-height:60px!default;
+$third-line-height:80px!default;
+$third-size:16px!default;
+$fourth-margin-top:30px!default;
+$tr-text-color:#999999!default;
+$tr-text-size:12px!default;
+$num-text-color:#f01400!default;
+$num-text-padding:10px!default;
+.main{
+  padding-bottom: $main-padding-bottom;
+  .container {
+  .first-row {
+    line-height: $first-line-hegiht;
+    vertical-align: middle;
+    box-shadow: 0 1px 1px -1px $main-shadow-color;
+    font-size: $first-size;
+    .main-first-page {
+      color: $first-page-color;
+      padding-right: 5px;
+      text-decoration: none;
+    }
+    .main-job {
+      color: $main-job-color;
+      padding-left: 5px;
+      text-decoration: none;
+    }
+  }
+  .second-row{
+    line-height : $second-line-height;
+    vertical-align: middle;
+    box-shadow: 0 1px 1px -1px $main-shadow-color;
+  }
+  .third-row{
+    line-height : $third-line-height;
+    vertical-align: middle;
+    box-shadow: 0 1px 1px -1px $main-shadow-color;
+    font-size: $third-size;
+  }
+  .fourth-row{
+      .col-container{
+        margin-top: $fourth-margin-top;
+      }
+  }
+  .tr-text-color{
+    color: $tr-text-color;
+    font-size: $tr-text-size;
+    .num-color{
+      color:$num-text-color;
+      padding-left: $num-text-padding;
+    }
+  }
+  .num-color-2{
+    color:$num-text-color; ;
+    font-size: $tr-text-size;
+  }
+}
+}
+
+//footer
+.bottom-footer{
+  background-color: #26a26f;
+  position: relative;
+  padding-bottom: 10px;
+}
+.footer-two-container .row {
+  .col-sm-12 {
+    color: map-get($font-color, footer);
+  }
+
+  a{
+    display: inline-block;
+    text-decoration: none;
+    color: map-get($font-color, footer);
+  }
+  .left-two-footer{
+    a{
+      margin-top: 10%;
+    }
+  }
+  .middle-two-footer{
+    p{
+      margin: 20px 0  5px;
+    }
+    .a-1,.a-2{
+      margin: 10px 0;
+    }
+    .a-1,.a-3{
+      margin-right:30px;
+    }
+  }
+}
+.text-bottom-footer{
+  color: map_get($font-color,footer);
+  background-color: map_get($bg-color,bottom-footer);
+  border-top: 1px solid #32c086;
+  margin:0;
+}

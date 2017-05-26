@@ -1,0 +1,188 @@
+@import "column.scss";
+@import "base.scss";
+@import "component.scss";
+@import "common.scss";
+$bg-color:(
+     body:#fafafa,
+     header:#29b078,
+     bottom-footer:#26a26f
+);
+$font-color:(
+        header:#fff,
+        intrduce-list:#999999,
+        top-footer:#999999,
+        footer:#ffffff
+);
+$header-size:14px!default;
+$header-color:#29b078!default;
+$icon-size:18px;
+$i-1-size:20px;
+body{
+  background-color: map_get($bg-color,body);
+}
+.header .row .col-sm-12 {
+  span{
+  @include font($header-size,$header-color);
+}
+  i{
+    @include font($icon-size,$header-color);
+  }
+  .i-1{
+    font-size: $i-1-size;
+    vertical-align: top;
+  }
+}
+//navbar height
+$navbar-height:70px!default;
+.bottom-header{
+  background-color: map_get($bg-color,header);
+}
+.navbar{
+  @extend %clearfix-1;
+  height: $navbar-height;
+  .navbar-brand{
+    color:map_get($font-color,header);
+    margin-top: $navbar-height/6;
+    h2{
+      font-size: 30px;
+    }
+    p{
+      -webkit-text-size-adjust: none;
+      font-size: 10px;
+    }
+  }
+  .nav li a{
+      padding-top:0;
+      padding-bottom: 0;
+      line-height: $navbar-height;
+      vertical-align: middle;
+      color:map_get($font-color,header);
+      background-color: map_get($bg-color,header);
+  }
+}
+//main css
+$right-icon-margin:50px!default;
+$title-margin:50px!default;
+$third-bottom-height:50px!default;
+$company-shadow-color:#999999!default;
+$company-shadow-width:5px!default;
+.main {
+  .first-container{
+  margin: 5% auto 0;
+  p{
+    color:map_get($font-color,intrduce-list);
+    @include max-screen($screen-xs-max){
+      text-align: center;
+    }
+  }
+  .right-top-icon {
+    margin-top: $right-icon-margin;
+  }
+}
+  .second-container{
+      margin-top: 5%;
+     .first-row,.second-row{
+       margin-top: 3%;
+     }
+  }
+  .third-container{
+
+    margin-top: 5%;
+    .bottom-row{
+      position: relative;
+      height:$third-bottom-height;
+    }
+    .focus-container{
+      bottom: 0;
+      li{
+        background-color: #eeeded;
+      }
+    }
+  }
+  .four-container{
+    margin-top: 5%;
+    .justify-list{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .company-img{
+      margin-top: 4%;
+      margin-bottom: 2%;
+      a{
+        display: block;
+        width: 100%;
+        text-align: center;
+        img{
+          max-width: 100%;
+        }
+      }
+      @include max-screen($screen-xs-max){
+        display: block;
+      }
+    }
+  }
+}
+//footer css
+
+.footer .top-footer{
+  background-color: #ffffff;
+  box-shadow:  0 -1px 1px -1px #999999;
+  padding-top: 4%;
+}
+.bottom-footer{
+  background-color: #26a26f;
+  position: relative;
+  padding-bottom: 10px;
+}
+.footer .container .row{
+    .col-md-2{
+    @include min-screen($screen-md-max){
+      width: 20%;
+      padding: 0;
+    }
+    ul{
+      min-height: 30px;
+      li{
+        float: left;
+        width:50%;
+        a{
+          color:map_get($font-color,top-footer);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+.footer-two-container .row {
+  .col-sm-12 {
+    color: map-get($font-color, footer);
+  }
+
+   a{
+    display: inline-block;
+    text-decoration: none;
+    color: map-get($font-color, footer);
+  }
+  .left-two-footer{
+    a{
+      margin-top: 10%;
+    }
+  }
+    .middle-two-footer{
+      p{
+      margin: 20px 0  5px;
+    }
+      .a-1,.a-2{
+        margin: 10px 0;
+      }
+      .a-1,.a-3{
+        margin-right:30px;
+      }
+  }
+}
+ .text-bottom-footer{
+  color: map_get($font-color,footer);
+  background-color: map_get($bg-color,bottom-footer);
+  border-top: 1px solid #32c086;
+  margin:0;
+}
